@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Formulario</h2>
+    <form action="#" method="POST">
+      <label for="email">Correo electrónico:</label><br>
+      <input type="text" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}.com" required><br><br>
+
+      <label for="fecha">Fecha (dd/mm/aaaa):</label><br>
+      <input type="text" id="fecha" name="fecha" pattern="(0[1-9]|[12][0-9]|3[01])/(0[1-9]|1[0-2])/[0-9]{4}" placeholder="dd/mm/aaaa" required><br><br>
+
+      <label for="contrasena">Contraseña (8-10 caracteres con al menos 2 caracteres especiales, una ayuscula y una minuscula):</label><br>
+      <input type="password" id="contrasena" name="contrasena" pattern="^(?=.*[!@#$%^&()+\-={}[\]:;|<,>.?/~])(?=.*[A-Z])(?=.*[a-z]).{8,10}$" required><br><br>
+
+      <label for="telefono">Teléfono (10 dígitos):</label><br>
+      <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" placeholder="Ejemplo: 1234567890" required><br><br>
+
+      <label for="edad">Edad (1-99 años):</label><br>
+      <input type="text" id="edad" name="edad" pattern="[1-9][0-9]?" min="1" max="99" required><br><br>
+
+      <input type="submit" value="Enviar">
+    </form>
+  </div>
+</body>
+</html>
