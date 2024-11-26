@@ -1,0 +1,146 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    display: flex;
+    height: 100vh;
+    background-image: url('/img/fondo.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen */
+    background-repeat: no-repeat; /* Evita que se repita */
+    background-position: center;
+}
+
+table {
+    font-size: 0.9rem;
+    width: 95%;
+    table-layout: fixed; 
+    margin: 0 auto;
+    background-color: #ffffff !important;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+table thead {
+    background-color: #1565c0;
+    color: white;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: center;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff !important; /* Blanco para filas impares */
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f0f0f0 !important; /* Gris claro para filas pares */
+}
+table tbody tr td {
+    background-color: inherit !important;
+    opacity: 1 !important;
+}
+
+
+.btn-floating {
+    position: relative;
+    z-index: 1;
+    width: 36px; /* Ancho más pequeño */
+    height: 36px; /* Alto más pequeño */
+    line-height: 36px;
+}
+
+
+h3 {
+    margin-bottom: 2rem;
+}
+
+
+.fixed-action-btn {
+    position: fixed;
+    bottom: 45px;
+    right: 45px;
+}
+
+
+.btn-floating i {
+    font-size: 1.3rem;
+}
+
+table tbody tr td:last-child {
+    
+    gap: 8px; /* Añade separación entre los botones */
+}
+
+
+/* css de formulario */
+
+.card-panel {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 2rem;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.input-field input, .input-field select {
+    border: 1px solid #ddd;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.select-dropdown li > span {
+    color: black !important;
+}
+
+.input-field label {
+    font-weight: bold;
+    color: #34495e;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 0.1rem 2rem;
+    font-size: 1rem;
+
+}
+
+
+.btn.waves-light {
+    background-color: #2ecc71;
+}
+
+
+.btn.red {
+    background-color: #e74c3c;
+}
+
+
+.btn:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+}
+
+
+form .row.center-align {
+    gap: 1rem;
+}
+
+
+form .row {
+    gap: 1rem;
+}
+
+/* 
+.container {
+    margin-top: 100rem;
+    max-width: 500px;
+}*/
+
+

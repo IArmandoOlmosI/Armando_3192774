@@ -1,0 +1,15 @@
+
+DROP DATABASE IF EXISTS Proyecto;
+CREATE DATABASE IF NOT EXISTS Proyecto;
+USE Proyecto;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    ap_paterno VARCHAR(50) NOT NULL,
+    ap_materno VARCHAR(50) NOT NULL,
+    edad INT NOT NULL,
+    estado_civil VARCHAR(50) NOT NULL,
+    apodo VARCHAR(50) NOT NULL UNIQUE,
+    telefono VARCHAR(15) NOT NULL
+);

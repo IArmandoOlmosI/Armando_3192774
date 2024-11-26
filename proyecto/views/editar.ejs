@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Registro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <% if(usuarios) { %>
+    <div class="container" style="margin-top: 2rem; max-width: 600px;">
+        <div class="card-panel">
+            <h4 class="center-align">Editar Usuario</h4>
+            <form action="/editar/<%= usuarios.id %>" method="POST">
+                <input id="id" name="id" value="<%= usuarios.id%>" hidden>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="nombre" name="nombre" type="text" value="<%= usuarios.nombre %>" class="validate" required>
+                        <label for="nombre">Nombre</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="ap_paterno" name="ap_paterno" type="text" value="<%= usuarios.ap_paterno %>" class="validate" required>
+                        <label for="ap_paterno">Apellido Paterno</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="ap_materno" name="ap_materno" type="text" value="<%= usuarios.ap_materno %>" class="validate" required>
+                        <label for="ap_materno">Apellido Materno</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="edad" name="edad" type="number" value="<%= usuarios.edad %>" class="validate" min="1" max="120" required>
+                        <label for="edad">Edad</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <select id="estado_civil" name="estado_civil" required>
+                            <option <%= usuarios.estado_civil === 'Soltero/a' ? 'selected' : '' %> value="Soltero/a">Soltero/a</option>
+                            <option <%= usuarios.estado_civil === 'Casado/a' ? 'selected' : '' %> value="Casado/a">Casado/a</option>
+                            <option <%= usuarios.estado_civil === 'Viudo/a' ? 'selected' : '' %> value="Viudo/a">Viudo/a</option>
+                            <option <%= usuarios.estado_civil === 'Divorciado/a' ? 'selected' : '' %> value="Divorciado/a">Divorciado/a</option>
+                        </select>
+                        <label>Estado Civil</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="apodo" name="apodo" type="text" value="<%= usuarios.apodo %>" class="validate" required>
+                        <label for="apodo">Apodo</label>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="telefono" name="telefono" type="tel" value="<%= usuarios.telefono %>" class="validate" pattern="[0-9]{10}" required>
+                        <label for="telefono">Teléfono (10 dígitos)</label>
+                    </div>
+                </div>
+                <div class="row center-align">
+                    <button class="btn waves-effect waves-light" type="submit">
+                        Registrar
+                        <i class="material-icons right">send</i>
+                    </button>
+                    <a href="/" class="btn waves-effect waves-light red">
+                        Cancelar
+                        <i class="material-icons right">cancel</i>
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <% } %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            M.FormSelect.init(elems);
+        });
+    </script>
+</body>
+</html>
+
